@@ -32,7 +32,7 @@ namespace CityInfo.API
 
             app.UseMvc();
 
-            //// app.Run(async (context) =>
+            // //app.Run(async (context) =>
             // app.Run((context) =>
             //{
             //    //await context.Response.WriteAsync("Hello World!");
