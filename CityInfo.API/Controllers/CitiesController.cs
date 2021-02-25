@@ -26,7 +26,7 @@ namespace CityInfo.API.Controllers
                 return NotFound();
             }
 
-            return Ok(cityToReturn);    // return new JsonResult(CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == id));
+            return Ok(cityToReturn);
         }
     }
 }
