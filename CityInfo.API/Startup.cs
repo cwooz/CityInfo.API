@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,16 @@ namespace CityInfo.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            //.AddJsonOptions(o =>          // SUPPORT OLDER SERIALIZTION (if needed)
+            //{
+            //    if (o.SerializerSettings.ContractResolver != null)
+            //    {
+            //        var castedResolver = o.SerializerSettings.ContractResolver as DefaultContractResolver;
+
+            //        castedResolver.NamingStrategy = null;
+            //    }
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -33,13 +44,6 @@ namespace CityInfo.API
             app.UseStatusCodePages();
 
             app.UseMvc();
-
-
-
-            //app.Run(async (context) =>
-            //{
-            //  await context.Response.WriteAsync("Hello World!");
-            //});
         }
     }
 }
