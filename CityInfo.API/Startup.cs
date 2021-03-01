@@ -22,16 +22,6 @@ namespace CityInfo.API
                 {
                     o.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
                 });
-
-            // SUPPORT OLDER SERIALIZTION (if needed)
-            //.AddJsonOptions(o =>
-            //{
-            //    if (o.SerializerSettings.ContractResolver != null)
-            //    {
-            //        var castedResolver = o.SerializerSettings.ContractResolver as DefaultContractResolver;
-            //        castedResolver.NamingStrategy = null;
-            //    }
-            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
