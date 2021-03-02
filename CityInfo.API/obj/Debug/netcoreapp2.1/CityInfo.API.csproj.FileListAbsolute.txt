@@ -13,3 +13,4 @@ C:\Users\wooz\source\repos\CityInfo\CityInfo.API\obj\Debug\netcoreapp2.1\CityInf
 C:\Users\wooz\source\repos\CityInfo\CityInfo.API\obj\Debug\netcoreapp2.1\CityInfo.API.dll
 C:\Users\wooz\source\repos\CityInfo\CityInfo.API\obj\Debug\netcoreapp2.1\CityInfo.API.pdb
 C:\Users\wooz\source\repos\CityInfo\CityInfo.API\obj\Debug\netcoreapp2.1\CityInfo.API.genruntimeconfig.cache
+C:\Users\wooz\source\repos\CityInfo\CityInfo.API\bin\Debug\netcoreapp2.1\nlog.config
