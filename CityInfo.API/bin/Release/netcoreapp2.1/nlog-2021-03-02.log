@@ -1,0 +1,5 @@
+2021-03-02 18:40:00.7382|INFO|CityInfo.API.Program|Initializing application...
+2021-03-02 18:40:00.8898|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\wooz\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-03-02 18:40:00.9626|FATAL|Microsoft.AspNetCore.Hosting.Internal.WebHost|Application startup exception
+2021-03-02 18:40:01.0892|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:1028/  
+2021-03-02 18:40:01.0948|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 5.7765ms 500 text/html; charset=utf-8
