@@ -15,7 +15,6 @@ namespace CityInfo.API.Controllers
         public IActionResult GetPointsOfInterest(int cityId)
         {
             var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
-
             if (city == null)
             {
                 return NotFound();
@@ -28,14 +27,12 @@ namespace CityInfo.API.Controllers
         public IActionResult GetPointOfInterest(int cityId, int id)
         {
             var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
-
             if (city == null)
             {
                 return NotFound();
             }
 
             var pointOfInterest = city.PointsOfInterest.FirstOrDefault(c => c.Id == id);
-
             if (pointOfInterest == null)
             {
                 return NotFound();
@@ -48,14 +45,26 @@ namespace CityInfo.API.Controllers
         public IActionResult CreatePointOfInterest(int cityId,
             [FromBody] PointOfInterestForCreationDto pointOfInterest)
         {
-            var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
+            if (pointOfInterest.Description == pointOfInterest.Name)
+            {
+                ModelState.AddModelError(
+                    "Description",
+                    "The provided description should be different than the name.");
+            }
 
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+
+            var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
             if (city == null)
             {
                 return NotFound();
             }
 
-            // DEMO - TO BE IMPROVED
+            // DEMO - TO BE REPLACED W/ ENTITY & AUTOMAPPER
             var maxPointOfInterestId = CitiesDataStore.Current.Cities.SelectMany(c => c.PointsOfInterest).Max(p => p.Id);
             var finalPointOfInterest = new PointOfInterestDto()
             {
