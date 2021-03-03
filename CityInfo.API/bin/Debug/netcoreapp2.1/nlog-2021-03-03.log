@@ -50,3 +50,16 @@
 2021-03-03 09:08:32.8021|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CityInfo.API.Models.CityDto, CityInfo.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
 2021-03-03 09:08:32.8021|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.API.Controllers.CitiesController.GetCities (CityInfo.API) in 135.388ms
 2021-03-03 09:08:32.8021|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 174.171ms 200 application/json; charset=utf-8
+2021-03-03 13:29:55.3162|INFO|CityInfo.API.Program|Initializing application...
+2021-03-03 13:29:57.9027|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\woosleyc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-03-03 13:29:58.6317|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:1028/  0
+2021-03-03 13:29:58.6317|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:1028/  
+2021-03-03 13:29:58.7027|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 72.3118ms 200 
+2021-03-03 13:29:58.8706|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 242.1577ms 404 text/plain
+2021-03-03 13:30:11.8399|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:1028/api/cities  
+2021-03-03 13:30:11.8873|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "GetCities", controller = "Cities"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCities() on controller CityInfo.API.Controllers.CitiesController (CityInfo.API).
+2021-03-03 13:30:11.9735|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.API.Controllers.CitiesController.GetCities (CityInfo.API) - Validation state: Valid
+2021-03-03 13:30:11.9839|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method CityInfo.API.Controllers.CitiesController.GetCities (CityInfo.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2.3989ms.
+2021-03-03 13:30:11.9964|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CityInfo.API.Models.CityDto, CityInfo.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-03-03 13:30:12.0607|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.API.Controllers.CitiesController.GetCities (CityInfo.API) in 163.7324ms
+2021-03-03 13:30:12.0703|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 230.5391ms 200 application/json; charset=utf-8
