@@ -11995,23 +11995,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\wooz\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\woosleyc\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\wooz\\source\\repos\\CityInfo\\CityInfo.API\\CityInfo.API.csproj",
+      "projectUniqueName": "C:\\Users\\woosleyc\\source\\repos\\CityInfo.API\\CityInfo.API\\CityInfo.API.csproj",
       "projectName": "CityInfo.API",
-      "projectPath": "C:\\Users\\wooz\\source\\repos\\CityInfo\\CityInfo.API\\CityInfo.API.csproj",
-      "packagesPath": "C:\\Users\\wooz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\wooz\\source\\repos\\CityInfo\\CityInfo.API\\obj\\",
+      "projectPath": "C:\\Users\\woosleyc\\source\\repos\\CityInfo.API\\CityInfo.API\\CityInfo.API.csproj",
+      "packagesPath": "C:\\Users\\woosleyc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\woosleyc\\source\\repos\\CityInfo.API\\CityInfo.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\wooz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\woosleyc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],

@@ -1,0 +1,52 @@
+2021-03-03 08:58:33.8455|INFO|CityInfo.API.Program|Initializing application...
+2021-03-03 08:58:39.2698|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\woosleyc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-03-03 08:58:40.2719|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DEBUG http://localhost:1028/  0
+2021-03-03 08:58:40.2719|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:1028/  
+2021-03-03 08:58:40.3858|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 115.1274ms 200 
+2021-03-03 08:58:40.7326|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 463.9543ms 404 text/plain
+2021-03-03 08:58:40.8342|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:1028/favicon.ico  
+2021-03-03 08:58:40.8452|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 8.9829ms 404 text/plain
+2021-03-03 08:59:48.2954|INFO|CityInfo.API.Program|Initializing application...
+2021-03-03 08:59:51.8293|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\woosleyc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-03-03 08:59:56.9037|INFO|CityInfo.API.Program|Initializing application...
+2021-03-03 08:59:57.3594|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\woosleyc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-03-03 08:59:57.6352|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:1028/  
+2021-03-03 08:59:57.7388|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 103.8253ms 404 text/plain
+2021-03-03 09:00:16.7879|INFO|CityInfo.API.Program|Initializing application...
+2021-03-03 09:00:17.2313|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\woosleyc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-03-03 09:00:52.4083|INFO|CityInfo.API.Program|Initializing application...
+2021-03-03 09:00:52.8573|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\woosleyc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-03-03 09:01:05.9014|INFO|CityInfo.API.Program|Initializing application...
+2021-03-03 09:01:06.5309|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\woosleyc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-03-03 09:01:06.7152|WARN|Microsoft.AspNetCore.Server.Kestrel|Unable to bind to http://localhost:1028 on the IPv4 loopback interface: 'An attempt was made to access a socket in a way forbidden by its access permissions'.
+2021-03-03 09:01:06.7152|WARN|Microsoft.AspNetCore.Server.Kestrel|Unable to bind to http://localhost:1028 on the IPv6 loopback interface: 'An attempt was made to access a socket in a way forbidden by its access permissions'.
+2021-03-03 09:01:06.7587|FATAL|Microsoft.AspNetCore.Server.Kestrel|Unable to start Kestrel.
+2021-03-03 09:01:06.7834|ERROR|CityInfo.API.Program|Application stopped because of exception.
+2021-03-03 09:01:15.6617|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:1028/api/cities  
+2021-03-03 09:01:15.6996|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "GetCities", controller = "Cities"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCities() on controller CityInfo.API.Controllers.CitiesController (CityInfo.API).
+2021-03-03 09:01:15.7154|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.API.Controllers.CitiesController.GetCities (CityInfo.API) - Validation state: Valid
+2021-03-03 09:01:15.7278|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method CityInfo.API.Controllers.CitiesController.GetCities (CityInfo.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2.7037ms.
+2021-03-03 09:01:15.7448|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CityInfo.API.Models.CityDto, CityInfo.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-03-03 09:01:15.8044|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.API.Controllers.CitiesController.GetCities (CityInfo.API) in 96.6806ms
+2021-03-03 09:01:15.8106|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 148.8509ms 200 application/json; charset=utf-8
+2021-03-03 09:01:26.1274|INFO|CityInfo.API.Program|Initializing application...
+2021-03-03 09:01:26.5859|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\woosleyc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-03-03 09:01:26.7754|WARN|Microsoft.AspNetCore.Server.Kestrel|Unable to bind to http://localhost:1028 on the IPv4 loopback interface: 'An attempt was made to access a socket in a way forbidden by its access permissions'.
+2021-03-03 09:01:26.7754|WARN|Microsoft.AspNetCore.Server.Kestrel|Unable to bind to http://localhost:1028 on the IPv6 loopback interface: 'An attempt was made to access a socket in a way forbidden by its access permissions'.
+2021-03-03 09:01:26.8082|FATAL|Microsoft.AspNetCore.Server.Kestrel|Unable to start Kestrel.
+2021-03-03 09:01:26.8320|ERROR|CityInfo.API.Program|Application stopped because of exception.
+2021-03-03 09:06:00.7897|INFO|CityInfo.API.Program|Initializing application...
+2021-03-03 09:06:01.2637|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\woosleyc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-03-03 09:06:01.5080|WARN|Microsoft.AspNetCore.Server.Kestrel|Unable to bind to https://localhost:1028 on the IPv4 loopback interface: 'An attempt was made to access a socket in a way forbidden by its access permissions'.
+2021-03-03 09:06:01.5080|WARN|Microsoft.AspNetCore.Server.Kestrel|Unable to bind to https://localhost:1028 on the IPv6 loopback interface: 'An attempt was made to access a socket in a way forbidden by its access permissions'.
+2021-03-03 09:06:01.5403|FATAL|Microsoft.AspNetCore.Server.Kestrel|Unable to start Kestrel.
+2021-03-03 09:06:01.5691|ERROR|CityInfo.API.Program|Application stopped because of exception.
+2021-03-03 09:08:29.2041|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:1028/  
+2021-03-03 09:08:29.2536|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 18.2589ms 404 text/plain
+2021-03-03 09:08:32.6414|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:1028/api/cities  
+2021-03-03 09:08:32.6665|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "GetCities", controller = "Cities"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCities() on controller CityInfo.API.Controllers.CitiesController (CityInfo.API).
+2021-03-03 09:08:32.7905|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CityInfo.API.Controllers.CitiesController.GetCities (CityInfo.API) - Validation state: Valid
+2021-03-03 09:08:32.7905|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method CityInfo.API.Controllers.CitiesController.GetCities (CityInfo.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.0208ms.
+2021-03-03 09:08:32.8021|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CityInfo.API.Models.CityDto, CityInfo.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-03-03 09:08:32.8021|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CityInfo.API.Controllers.CitiesController.GetCities (CityInfo.API) in 135.388ms
+2021-03-03 09:08:32.8021|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 174.171ms 200 application/json; charset=utf-8
