@@ -32,9 +32,9 @@ namespace CityInfo.API
 #endif
 
             var connectionString = @"Server=(localdb)\mssqllocaldb;Database=CityInfoDB;Trusted_Connection=True;";
-            services.AddDbContext<CityInfoContext>(o =>
+            services.AddDbContext<CityInfoContext>(optionsBuilder =>
             {
-                o.UseSqlServer(connectionString);
+                optionsBuilder.UseSqlServer(connectionString);
             });
         }
 

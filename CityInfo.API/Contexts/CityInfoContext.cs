@@ -14,14 +14,7 @@ namespace CityInfo.API.Contexts
 
         public CityInfoContext(DbContextOptions<CityInfoContext> options) : base(options)
         {
-            Database.EnsureCreated();
+            // Database.EnsureCreated();    // Removed: To add Database Migration
         }
-
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlServer("connectionstring");
-        //    base.OnConfiguring(optionsBuilder);
-        //}
-
     }
 }

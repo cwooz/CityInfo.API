@@ -17,6 +17,9 @@ namespace CityInfo.API.Entities
         [MaxLength(50)]
         public string Name { get; set; }
 
+        [MaxLength(200)]
+        public string Description { get; set; }
+
         [ForeignKey("CityId")]
         public City City { get; set; }          // Convention Based
         public int CityId { get; set; }        // Explicitly define foreign key property on dependent class
