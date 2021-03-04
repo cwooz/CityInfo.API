@@ -22,5 +22,6 @@ namespace CityInfo.API.Contexts
         //    optionsBuilder.UseSqlServer("connectionstring");
         //    base.OnConfiguring(optionsBuilder);
         //}
+
     }
 }
