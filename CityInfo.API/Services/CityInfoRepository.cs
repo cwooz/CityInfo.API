@@ -62,7 +62,7 @@ namespace CityInfo.API.Services
 
         public void DeletePointOfInterestForCity(PointOfInterest pointOfInterest)
         {
-            // Mock-up: Implementation of repository that requires a Delete method (e.g. not EF Core)
+            _context.PointsOfInterest.Remove(pointOfInterest);
         }
 
         public bool Save()
