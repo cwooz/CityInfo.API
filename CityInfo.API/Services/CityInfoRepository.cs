@@ -55,6 +55,16 @@ namespace CityInfo.API.Services
             city.PointsOfInterest.Add(pointOfInterest);
         }
 
+        public void UpdatePointOfInterestForCity(int cityId, PointOfInterest pointOfInterest)
+        {
+            // Mock-up: Implementation of repository that requires an Update method (e.g. not EF Core)
+        }
+
+        public void DeletePointOfInterestForCity(PointOfInterest pointOfInterest)
+        {
+            // Mock-up: Implementation of repository that requires a Delete method (e.g. not EF Core)
+        }
+
         public bool Save()
         {
             return (_context.SaveChanges() >= 0);

@@ -29,6 +29,7 @@ namespace CityInfo.API.Controllers
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
+
         [HttpGet]
         public IActionResult GetPointsOfInterest(int cityId)
         {
@@ -52,6 +53,7 @@ namespace CityInfo.API.Controllers
             }
         }
 
+
         [HttpGet("{id}", Name ="GetPointOfInterest")]
         public IActionResult GetPointOfInterest(int cityId, int id)
         {
@@ -70,6 +72,7 @@ namespace CityInfo.API.Controllers
 
             return Ok(_mapper.Map<PointOfInterestDto>(pointOfInterest));
         }
+
 
         [HttpPost]
         public IActionResult CreatePointOfInterest(int cityId,
@@ -107,9 +110,6 @@ namespace CityInfo.API.Controllers
         }
 
 
-
-
-
         [HttpPut("{id}")]
         public IActionResult UpdatePointOfInterest(int cityId, int id,
             [FromBody] PointOfInterestForUpdateDto pointOfInterest)
@@ -126,49 +126,47 @@ namespace CityInfo.API.Controllers
                 return BadRequest(ModelState);
             }
 
-            var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
-            if (city == null)
+            if (!_cityInfoRepository.CityExists(cityId))
             {
                 return NotFound();
             }
 
-            var pointOfInterestFromStore = city.PointsOfInterest.FirstOrDefault(p => p.Id == id);
-            if (pointOfInterestFromStore == null)
+            var pointOfInterestEntity = _cityInfoRepository.GetPointOfInterestForCity(cityId, id);
+
+            if (pointOfInterestEntity == null)
             {
                 return NotFound();
             }
 
-            pointOfInterestFromStore.Name = pointOfInterest.Name;
-            pointOfInterestFromStore.Description = pointOfInterest.Description;
+            _mapper.Map(pointOfInterest, pointOfInterestEntity);   // Automapper overrides the values in the destination object w/ values from source object
+
+            _cityInfoRepository.UpdatePointOfInterestForCity(cityId, pointOfInterestEntity);   // To mock implementation in repository
+
+            _cityInfoRepository.Save();
 
             return NoContent();
         }
+
 
         [HttpPatch("{id}")]
         public IActionResult PartiallyUpdatePointOfInterest(int cityId, int id,
             [FromBody] JsonPatchDocument<PointOfInterestForUpdateDto> patchDoc)
         {
-            var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
-            if (city == null)
+            if (!_cityInfoRepository.CityExists(cityId))
             {
                 return NotFound();
             }
 
-            var pointOfInterestFromStore = city.PointsOfInterest.FirstOrDefault(p => p.Id == id);
-            if (pointOfInterestFromStore == null)
+            var pointOfInterestEntity = _cityInfoRepository.GetPointOfInterestForCity(cityId, id);
+
+            if (pointOfInterestEntity == null)
             {
                 return NotFound();
             }
 
-            var pointOfInterestToPatch =
-                new PointOfInterestForUpdateDto()
-                {
-                    Name = pointOfInterestFromStore.Name,
-                    Description = pointOfInterestFromStore.Description
-                };
+            var pointOfInterestToPatch = _mapper.Map<PointOfInterestForUpdateDto>(pointOfInterestEntity);
 
             patchDoc.ApplyTo(pointOfInterestToPatch, ModelState);
-
             
             if (!ModelState.IsValid)
             {
@@ -187,12 +185,15 @@ namespace CityInfo.API.Controllers
                 return BadRequest(ModelState);
             }
 
+            _mapper.Map(pointOfInterestToPatch, pointOfInterestEntity);   // Automapper overrides the values in the destination object w/ values from source object
 
-            pointOfInterestFromStore.Name = pointOfInterestToPatch.Name;
-            pointOfInterestFromStore.Description = pointOfInterestToPatch.Description;
+            _cityInfoRepository.UpdatePointOfInterestForCity(cityId, pointOfInterestEntity);   // To mock implementation in repository
+
+            _cityInfoRepository.Save();
 
             return NoContent();
         }
+
 
         [HttpDelete("{Id}")]
         public IActionResult DeletePointOfInterest(int cityId, int id)
