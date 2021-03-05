@@ -105,23 +105,28 @@ namespace CityInfo.API.Controllers
                 return BadRequest(ModelState);
             }
 
+            // var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
+            // if (city == null)
+            // {
+            //     return NotFound();
+            // }
 
-            var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
-            if (city == null)
+            if (!_cityInfoRepository.CityExists(cityId))
             {
                 return NotFound();
             }
 
-            // DEMO - TO BE REPLACED W/ ENTITY & AUTOMAPPER
-            var maxPointOfInterestId = CitiesDataStore.Current.Cities.SelectMany(c => c.PointsOfInterest).Max(p => p.Id);
-            var finalPointOfInterest = new PointOfInterestDto()
-            {
-                Id = ++maxPointOfInterestId,
-                Name = pointOfInterest.Name,
-                Description = pointOfInterest.Description
-            };
+            //var maxPointOfInterestId = CitiesDataStore.Current.Cities.SelectMany(c => c.PointsOfInterest).Max(p => p.Id);
+            //var finalPointOfInterest = new PointOfInterestDto()
+            //{
+            //    Id = ++maxPointOfInterestId,
+            //    Name = pointOfInterest.Name,
+            //    Description = pointOfInterest.Description
+            //};
 
-            city.PointsOfInterest.Add(finalPointOfInterest);
+            var finalPointOfInterest = _mapper.Map<Entities.PointOfInterest>(pointOfInterest);
+
+            // city.PointsOfInterest.Add(finalPointOfInterest);
 
             return CreatedAtRoute(
                 "GetPointOfInterest",
