@@ -40,17 +40,6 @@ namespace CityInfo.API.Controllers
                     return NotFound();
                 }
 
-                // var pointsOfInterestForCityResults = new List<PointOfInterestDto>();
-                // foreach (var poi in pointsOfInterestForCity)
-                // {
-                //     pointsOfInterestForCityResults.Add(new PointOfInterestDto()
-                //     {
-                //         Id = poi.Id,
-                //         Name = poi.Name,
-                //         Description = poi.Description
-                //     });
-                // }
-
                 var pointsOfInterestForCity = _cityInfoRepository.GetPointsOfInterestForCity(cityId);
 
                 return Ok(_mapper.Map<IEnumerable<PointOfInterestDto>>(pointsOfInterestForCity));
@@ -79,13 +68,6 @@ namespace CityInfo.API.Controllers
                 return NotFound();
             }
 
-            // var pointOfInterestResult = new PointOfInterestDto()
-            // {
-            //     Id = pointOfInterest.Id,
-            //     Name = pointOfInterest.Name,
-            //     Description = pointOfInterest.Description
-            // };
-
             return Ok(_mapper.Map<PointOfInterestDto>(pointOfInterest));
         }
 
@@ -105,34 +87,28 @@ namespace CityInfo.API.Controllers
                 return BadRequest(ModelState);
             }
 
-            // var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
-            // if (city == null)
-            // {
-            //     return NotFound();
-            // }
-
             if (!_cityInfoRepository.CityExists(cityId))
             {
                 return NotFound();
             }
 
-            //var maxPointOfInterestId = CitiesDataStore.Current.Cities.SelectMany(c => c.PointsOfInterest).Max(p => p.Id);
-            //var finalPointOfInterest = new PointOfInterestDto()
-            //{
-            //    Id = ++maxPointOfInterestId,
-            //    Name = pointOfInterest.Name,
-            //    Description = pointOfInterest.Description
-            //};
-
             var finalPointOfInterest = _mapper.Map<Entities.PointOfInterest>(pointOfInterest);
 
-            // city.PointsOfInterest.Add(finalPointOfInterest);
+            _cityInfoRepository.AddPointOfInterestForCity(cityId, finalPointOfInterest);
+
+            _cityInfoRepository.Save();
+
+            var createdPointOfInterestToReturn = _mapper.Map<Models.PointOfInterestDto>(finalPointOfInterest);   // Why can this be simplified?
 
             return CreatedAtRoute(
                 "GetPointOfInterest",
-                new { cityId = cityId, id = finalPointOfInterest.Id },
-                finalPointOfInterest);
+                new { cityId = cityId, id = createdPointOfInterestToReturn.Id },
+                createdPointOfInterestToReturn);
         }
+
+
+
+
 
         [HttpPut("{id}")]
         public IActionResult UpdatePointOfInterest(int cityId, int id,

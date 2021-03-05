@@ -25,18 +25,6 @@ namespace CityInfo.API.Controllers
         [HttpGet]
         public IActionResult GetCities()
         {
-            // var results = new List<CityWithoutPointsOfInterestDto>();
-
-            // foreach (var cityEntity in cityEntities)
-            // {
-            //     results.Add(new CityWithoutPointsOfInterestDto
-            //     {
-            //         Id = cityEntity.Id,
-            //         Description = cityEntity.Description,
-            //         Name = cityEntity.Name
-            //     });
-            // }
-
             var cityEntities = _cityInfoRepository.GetCities();
 
             return Ok(_mapper.Map<IEnumerable<CityWithoutPointsOfInterestDto>>(cityEntities));
@@ -54,34 +42,9 @@ namespace CityInfo.API.Controllers
 
             if (includePointsOfInterest)
             {
-                // var cityResult = new CityDto()
-                // {
-                //     Id = city.Id,
-                //     Name = city.Name,
-                //     Description = city.Description
-                // };
-
-                // foreach (var poi in city.PointsOfInterest)
-                // {
-                //     cityResult.PointsOfInterest.Add(
-                //         new PointOfInterestDto()
-                //         {
-                //             Id = poi.Id,
-                //             Name = poi.Name,
-                //             Description = poi.Description
-                //         });
-                // }
-
                 return Ok(_mapper.Map<CityDto>(city));
             }
-            // var cityWithoutPointsOfInterestResult =
-            //     new CityWithoutPointsOfInterestDto()
-            //     {
-            //         Id = city.Id,
-            //         Name = city.Name,
-            //         Description = city.Description
-            //     };
-
+            
             return Ok(_mapper.Map<CityWithoutPointsOfInterestDto>(city));
         }
     }
